@@ -66,3 +66,11 @@ class FriendGraph():
                     seen.add(friend)
                     print("added to queue:", friend)
         return False
+
+    def print_friends(self):
+     
+        for friend in self.nodes:
+            print(friend.name)
+
+
+def make_simple_friendship(friend1, friend2, friend3):
