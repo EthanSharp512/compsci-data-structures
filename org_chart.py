@@ -47,8 +47,22 @@ class Tree():
 
         return self.root.find(data)
 
+    def total_nodes(self):
+    
+        def num_children(node, current_total):
+            inner_nodes = current_total
+            
+            for child in node.children:
+                inner_nodes += 1
+                inner_nodes = num_children(child, inner_nodes)
+            
+            return inner_nodes
+
+        return num_children(self.root, 0)
+
+
 
 def make_tree(ceo, direct_reports_list):
-    
+
     node = Node(ceo, direct_reports_list)
     return Tree(node)
