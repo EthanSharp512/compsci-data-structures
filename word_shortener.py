@@ -80,5 +80,32 @@ class LinkedList(object):
             else:     # haven't found yet, keep traversing
                 current = current.next
 
-def shorten_word(list):
-    pass
+    def __len__(self):
+
+        length = 1
+
+        current_node = self.head
+
+        while current_node.next != None:
+            length += 1
+            current_node = current_node.next
+
+        return length
+
+
+my_words = ["hippopatmus", "gummy bears", "James", "dinosaur", "potato", "cats", "supercalafragilisticexpialadosis", "antidisestablishmentarianism"]
+
+def shorten_word(list_of_words):
+    list_of_words = list_of_words[1:]
+
+    ll = LinkedList()
+
+    for word in list_of_words:
+        ll.append(word)
+
+    return ll
+
+
+my_ll = shorten_word(my_words)
+
+print(len(my_ll))
