@@ -97,3 +97,16 @@ class Queue():
         """Is queue empty?"""
 
         return not bool(self._length)
+
+    def swap_head(self, new_head):
+        """
+        This method is suggested in part 3 and swaps out the head item of the queue.
+        """
+        old_next = self._head.next
+        self._head = Node(new_head, old_next)
+
+        
+def add_jobs(list):
+    my_queue = Queue(list)
+
+    return my_queue
